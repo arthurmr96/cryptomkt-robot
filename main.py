@@ -1,7 +1,9 @@
 import helpers
 import requests
 
-request = requests.get('https://api.cryptomkt.com/v1/balance')
+base_url = 'https://api.cryptomkt.com'
+
+request = requests.get(base_url + '/v1/balance')
 
 request = helpers.set_request_authentication(request, '/v1/balance')
 

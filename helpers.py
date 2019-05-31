@@ -1,4 +1,3 @@
-import requests
 import json
 import time
 import hmac
@@ -13,7 +12,7 @@ def set_request_authentication (request, path_url):
     timestamp = time.time()
     secret_key = config['secretkey']
 
-    message = str(timestamp) + '/v1/bala'
+    message = str(timestamp) + path_url
 
     signature = hmac.new(bytes(secret_key, 'utf-8'), bytes(message, 'utf-8'), hashlib.sha384)
 
